@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammad Shavez Wali Khan | Portfolio</title>
+<link rel="icon" type="image/jpeg" href="assets/images/shavez.jpeg">
+</head>
+
+    <style>
+        #menu{display:none;}
+        #menu:target{display:block;}
+        </style>
+        <style>/* ================= RESET ================= */
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+                font-family:Arial,sans-serif;
+            }
+            /* ================= BODY ================= */
+            body{
+                background: linear-gradient(135deg,#0f172a,#1e293b,#0b1220);
+                color:white;
+                line-height:1.6;
+                overflow-x:hidden;
+            }
+            button{
+                background:linear-gradient(90deg,#2563eb,#00bcd4);
+                color:white;
+                border:none;
+                padding:10px 15px;
+                border-radius:10px;
+                cursor:pointer;
+                font-weight:bold;
+                transition:0.3s;
+                }
+            /* ================= FLOATING BACKGROUND ================= */
+            body::before,
+            body::after{
+                content:"";
+                position:fixed;
+                width:200%;
+                height:200%;
+                top:-50%;
+                left:-50%;
+                background-image:
+                    radial-gradient(circle, rgba(0,255,255,0.2) 2px, transparent 2px),
+                    radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+                background-size:80px 80px, 120px 120px;
+                animation: moveBg 25s linear infinite;
+                z-index:-1;
+                opacity:0.5;
+            }
+            
+            body::after{
+                animation-duration:40s;
+                opacity:0.3;
+            }
+            
+            @keyframes moveBg{
+                0%{transform:translate(0,0);}
+                100%{transform:translate(120px,120px);}
+            }
+            
+            /* ================= HEADER ================= */
+            header{
+                text-align:center;
+                padding:50px 20px;
+                background:linear-gradient(135deg,#0d47a1,#00bcd4);
+                border-bottom:3px solid #00e5ff;
+                animation: fadeDown 1s ease;
+            }
+            
+            @keyframes fadeDown{
+                from{opacity:0; transform:translateY(-40px);}
+                to{opacity:1; transform:translateY(0);}
+            }
+            
+            
+            
+            
+            @keyframes float{
+                0%{transform:translateY(0);}
+                50%{transform:translateY(-10px);}
+                100%{transform:translateY(0);}
+            }
+            
+            /* ================= SECTIONS ================= */
+            section{
+                width:90%;
+                margin:25px auto;
+                padding:20px;
+                background:rgba(30,41,59,0.9);
+                border-radius:15px;
+                border:1px solid #334155;
+                box-shadow:0 0 20px rgba(0,255,255,0.1);
+                animation: fadeUp 0.8s ease;
+            }
+            
+            @keyframes fadeUp{
+                from{opacity:0; transform:translateY(20px);}
+                to{opacity:1; transform:translateY(0);}
+            }
+            
+            /* ================= HEADINGS ================= */
+            h1{
+                text-align:center;
+                font-size:2.3rem;
+                animation: glow 2s infinite alternate;
+            }
+            
+            @keyframes glow{
+                from{text-shadow:0 0 10px #00e5ff;}
+                to{text-shadow:0 0 25px #00e5ff;}
+            }
+            
+            h2{
+                color:#38bdf8;
+                border-left:5px solid #00e5ff;
+                padding-left:10px;
+                margin-bottom:10px;
+            }
+            
+            h3{
+                color:#60a5fa;
+            }
+            
+            /* ================= IMAGES ================= */
+            img{
+                max-width:100%;
+                display:block;
+                margin:10px auto;
+                border-radius:12px;
+                transition:0.4s ease;
+            }
+            
+            img:hover{
+                transform:scale(1.06);
+                box-shadow:0 0 25px rgba(0,255,255,0.4);
+            }
+            
+            /* ================= MENU ================= */
+            #menu{
+                display:none;
+                position:fixed;
+                top:10%;
+                left:50%;
+                transform:translateX(-50%);
+                width:80%;
+                max-width:400px;
+                background:#0f172a;
+                padding:20px;
+                border-radius:15px;
+                border:1px solid #334155;
+                z-index:999;
+                animation: pop 0.4s ease;
+            }
+            
+            #menu:target{
+                display:block;
+            }
+            
+            @keyframes pop{
+                from{transform:translateX(-50%) scale(0.8); opacity:0;}
+                to{transform:translateX(-50%) scale(1); opacity:1;}
+            }
+            
+            /* ================= BUTTONS ================= */
+            button{
+                background:linear-gradient(90deg,#2563eb,#00bcd4);
+                color:white;
+                border:none;
+                padding:10px 15px;
+                border-radius:10px;
+                cursor:pointer;
+                font-weight:bold;
+                transition:0.3s;
+            }
+            
+            button:hover{
+                transform:scale(1.1);
+                box-shadow:0 0 20px #00e5ff;
+            }
+            
+            /* ================= PROGRESS BARS ================= */
+            progress{
+                width:100%;
+                height:18px;
+                accent-color:#00e5ff;
+                animation: fill 2s ease-in-out;
+            }
+            
+            @keyframes fill{
+                from{filter:brightness(0.5);}
+                to{filter:brightness(1);}
+            }
+            
+            /* ================= FORM ================= */
+            form{
+                width:95%;
+                max-width:700px;
+                margin:auto;
+                background:#0f172a;
+                padding:20px;
+                border-radius:15px;
+                border:1px solid #334155;
+            }
+            
+            input,textarea{
+                width:100%;
+                padding:10px;
+                margin:6px 0;
+                border-radius:8px;
+                border:1px solid #334155;
+                background:#0b1220;
+                color:white;
+            }
+            
+            /* ================= FOOTER ================= */
+            footer{
+                text-align:center;
+                padding:20px;
+                background:#020617;
+                border-top:2px solid #00e5ff;
+            }
+            
+            /* ================= RESPONSIVE ================= */
+            @media(max-width:768px){
+                section{width:95%;}
+                button{width:100%;}
+                header img{width:160px;height:160px;}
+                h1{font-size:1.7rem;}
+            }</style>
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+<button><a href="#menu">☰ Navigation Panel</a></button>
+
+<div id="menu">
+
+<button><a href="#home">Home</a></button><br><br>
+<button><a href="#about">About</a></button><br><br>
+<button><a href="#skills">Skills</a></button><br><br>
+<button><a href="#projects">Projects</a></button><br><br>
+<button><a href="#goals">Goals</a></button><br><br>
+<button><a href="#achievements">Achievements</a></button><br><br>
+<button><a href="#contact">Contact</a></button><br><br>
+
+<button><a href="#">Close ✖</a></button>
+
+</div>
+
+<!-- ================= HOME ================= -->
+<header id="home">
+
+<h1>MOHAMMAD SHAVEZ WALI KHAN</h1>
+<h3>Student • Future Software Developer • Ethical Hacker • Astronomer</h3>
+
+<img src="assets/images/hero.png" alt="Profile Image" width="1000">
+
+<p><b>Dream Big • Learn Daily • Build The Future</b></p>
+
+</header>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+
+<h2>About Me</h2>
+
+<img src="assets/images/shavez.jpeg" alt="Profile Image" width="500">
+<h3>Who Am I?</h3>
+
+<p><strong>Name:</strong> Mohammad Shavez Wali Khan</p>
+<p><strong>Country:</strong> India</p>
+<p><strong>Role:</strong> Student</p>
+
+<p>
+I am passionate about technology, coding, cyber security, astronomy, innovation and leadership.
+</p>
+
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+
+<h2>My Skills</h2>
+
+<img src="assets/images/html.png" width="50">
+<h3>HTML - 80%</h3>
+<progress value="80" max="100"></progress>
+
+<br><br>
+
+<img src="assets/images/CSS.png" width="50">
+<h3>CSS - 50%</h3>
+<progress value="50" max="100"></progress>
+
+<br><br>
+
+<img src="assets/images/TALWIND CSS.jpg" width="50">
+<h3>Tailwind CSS - 50%</h3>
+<progress value="50" max="100"></progress>
+
+<br><br>
+
+<img src="assets/images/js.png" width="50">
+<h3>JavaScript - 40%</h3>
+<progress value="40" max="100"></progress>
+
+<br><br>
+
+<img src="assets/images/react.png" width="50">
+<h3>React - 30%</h3>
+<progress value="30" max="100"></progress>
+
+<br><br>
+
+<img src="assets/images/node-js.jpg" width="50">
+<h3>Node.js - 40%</h3>
+<progress value="40" max="100"></progress>
+
+<br><br>
+
+<img src="assets/images/flask.png" width="50">
+<h3>Flask - 20%</h3>
+<progress value="20" max="100"></progress>
+
+<br><br>
+
+<img src="assets/images/HINGLISH COMMUNICATION.png" width="50">
+<h3>Hinglish Communication - 95%</h3>
+<progress value="95" max="100"></progress>
+
+<br><br>
+
+<img src="assets/images/ENGLISH COMMUNICATION.jpg" width="50">
+<h3>English Communication - 60%</h3>
+<progress value="60" max="100"></progress>
+
+<br><br>
+
+<img src="assets/images/Public Speaking LOGO.jpg" width="50">
+<h3>Public Speaking - 85%</h3>
+<progress value="85" max="100"></progress>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+
+<h2>Featured Projects</h2>
+
+<!-- BCC PROJECT -->
+<div>
+<h3>BCC Website</h3>
+
+<a href="https://bharat-cyber-commando.vercel.app/" target="_blank" rel="noopener noreferrer">
+    <img src="assets/images/bcclogo.jpg" width="400" alt="Bharat Cyber Commando">
+</a>
+
+<p>Cyber awareness and digital security project</p>
+
+<a href="https://bharat-cyber-commando.vercel.app/" target="_blank">
+<button>Visit Project</button>
+</a>
+</div>
+
+<hr>
+
+<!-- VEXORA PROJECT -->
+<div>
+<h3>VEXORA</h3>
+
+<img src="assets/images/vexora.png" width="350">
+
+<p>Learn Coding by Games</p>
+
+
+<button>Comming Soon</button>
+</div>
+
+<hr>
+
+<!-- AIKN PROJECT -->
+<div>
+<h3>AIKN Presentation</h3>
+
+<a href="https://www.youtube.com/live/7jqv_al3Thg">
+<img src="assets/images/AIKN.jpeg" width="400">
+</a>
+
+<p>Science and technology presentation</p>
+
+<a href="Https://www.youtube.com/live/7jqv_al3Thg">
+<button>Watch Video</button>
+</a>
+</div>
+
+
+</section>
+
+<!-- ================= GOALS ================= -->
+<section id="goals">
+
+<h2>Future Goals</h2>
+<img src="assets/images/goals.png" width="400">
+<ul>
+<li>Become a Software Developer</li>
+<li>Become an Ethical Hacker</li>
+<li>Become an Astronomer</li>
+<li>Build Innovative Projects</li>
+<li>Become a Tech Entrepreneur</li>
+<li>Help Society Through Technology</li>
+</ul>
+
+</section>
+
+
+<!-- ================= ACHIEVEMENTS ================= -->
+<section id="achievements">
+
+<h2>Achievements</h2>
+
+<img src="assets/images/Acheivments.jpeg" width="400">
+
+<ul>
+<li>School Parliament Member</li>
+<li>Strong Academic Performance</li>
+<li>Competition Participation</li>
+</ul>
+<h3>Education</h3>
+
+<p>
+Currently studying in Hind Public School and improving academic + sports skills.
+</p>
+<img src="assets/images/hind public school logo.png" alt="School LOGO">
+<img src="assets/images/hind public school.jpg" alt="School">
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<p><b>Name:</b> Mohammad Shavez Wali Khan</p>
+
+<!-- EMAIL IMAGE CLICKABLE -->
+<a href="mailto:mohammadshavezwalikhan06@gmail.com">
+<img src="assets/images/emaiL.jpg" width="120">
+</a>
+
+<p>Email: mohammadshavezwalikhan06@gmail.com</p>
+
+
+       
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+<p>© 2026 Mohammad Shavez Wali Khan | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
